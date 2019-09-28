@@ -1,2 +1,2 @@
-# Clase-IOS-MAJU
-Aquí encontrarás lo que hemos hecho en clase.
+# Clase-IOS
+Aquí encontrarás lo hemos visto y hecho en clase
