@@ -7,16 +7,25 @@
 //
 
 import UIKit
+import SwiftyJSON
+import SDWebImage
 
 private let reuseIdentifier = "Cell"
 
 class ListaCollectionViewController: UIViewController {
     @IBOutlet weak var collectionPolemom: UICollectionView!
+    var data = [JSON]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
+        let path = Bundle.main.path(forResource: "pokemon", ofType: "json")!
+        let jsonFile = try? String(contentsOfFile: path, encoding: String.Encoding.utf8)
+        
+        if let dataFromFile = jsonFile!.data(using: String.Encoding.utf8, allowLossyConversion: false) {
+            let json = try! JSON(data: dataFromFile)
+            data = json.arrayValue
+        }
     }
 
     // MARK: - Navigation
@@ -42,16 +51,22 @@ extension ListaCollectionViewController: UICollectionViewDelegate, UICollectionV
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 100
+        return data.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pokemonCell", for: indexPath) as! PokemonCollectionViewCell
     
-        cell.imagenPokemon.image = #imageLiteral(resourceName: "Ditto")
-        cell.imagenPokemon.image = UIImage(named: "Ditto")
+        let pokemon = data[indexPath.row]
+        //cell.imagenPokemon.sd_setImage(with: URL(string: pokemon["image"].stringValue), placeholderImage: UIImage(named: "Ditto"), options: .fromLoaderOnly, context: nil)
+        if let url = URL(string: pokemon["image"].stringValue) {
+            let data = try! Data(contentsOf: url)
+            let image = UIImage(data: data)
+            cell.imagenPokemon.image = image
+        }
         
+        cell.buttonOne.setTitle(pokemon["name"].stringValue, for: .normal)
         cell.buttonOne.addTarget(self, action: #selector(goDetail), for: .touchUpInside)
         cell.buttonOne.tag = indexPath.row
         // Configure the cell

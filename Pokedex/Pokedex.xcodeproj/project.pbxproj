@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6343FFA023442BA800E9D58D /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6343FF9F23442BA800E9D58D /* SwiftyJSON.framework */; };
+		6343FFA123442BA800E9D58D /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6343FF9F23442BA800E9D58D /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6343FFA423442BB300E9D58D /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6343FFA323442BB300E9D58D /* SDWebImage.framework */; };
+		6343FFA523442BB300E9D58D /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6343FFA323442BB300E9D58D /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6343FFA723442D3100E9D58D /* pokemon.json in Resources */ = {isa = PBXBuildFile; fileRef = 6343FFA623442D3100E9D58D /* pokemon.json */; };
+		6343FFA92344346100E9D58D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6343FFA82344346100E9D58D /* LoginViewController.swift */; };
 		6345A52E233D8EF2008E63D8 /* ListaCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6345A52D233D8EF2008E63D8 /* ListaCollectionViewController.swift */; };
 		6345A530233D9071008E63D8 /* PokemonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6345A52F233D9071008E63D8 /* PokemonCollectionViewCell.swift */; };
 		6358DC1423319C0700457D24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6358DC1323319C0700457D24 /* AppDelegate.swift */; };
@@ -35,7 +41,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6343FFA223442BA800E9D58D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6343FFA523442BB300E9D58D /* SDWebImage.framework in Embed Frameworks */,
+				6343FFA123442BA800E9D58D /* SwiftyJSON.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		6343FF9F23442BA800E9D58D /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		6343FFA323442BB300E9D58D /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
+		6343FFA623442D3100E9D58D /* pokemon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = pokemon.json; path = ../../../../../../Desktop/pokemon.json; sourceTree = "<group>"; };
+		6343FFA82344346100E9D58D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6345A52D233D8EF2008E63D8 /* ListaCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListaCollectionViewController.swift; path = ListaPokemon/ListaCollectionViewController.swift; sourceTree = "<group>"; };
 		6345A52F233D9071008E63D8 /* PokemonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCollectionViewCell.swift; sourceTree = "<group>"; };
 		6358DC1023319C0700457D24 /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6343FFA423442BB300E9D58D /* SDWebImage.framework in Frameworks */,
+				6343FFA023442BA800E9D58D /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +105,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6343FF9E23442BA700E9D58D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6343FFA323442BB300E9D58D /* SDWebImage.framework */,
+				6343FF9F23442BA800E9D58D /* SwiftyJSON.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6358DC0723319C0700457D24 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +121,7 @@
 				6358DC2723319C0B00457D24 /* PokedexTests */,
 				6358DC3223319C0B00457D24 /* PokedexUITests */,
 				6358DC1123319C0700457D24 /* Products */,
+				6343FF9E23442BA700E9D58D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +138,7 @@
 		6358DC1223319C0700457D24 /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				6343FFA623442D3100E9D58D /* pokemon.json */,
 				6358DC1323319C0700457D24 /* AppDelegate.swift */,
 				6358DC1523319C0700457D24 /* ViewController.swift */,
 				6345A52D233D8EF2008E63D8 /* ListaCollectionViewController.swift */,
@@ -109,6 +147,7 @@
 				6358DC1C23319C0A00457D24 /* LaunchScreen.storyboard */,
 				6358DC1F23319C0A00457D24 /* Info.plist */,
 				6345A52F233D9071008E63D8 /* PokemonCollectionViewCell.swift */,
+				6343FFA82344346100E9D58D /* LoginViewController.swift */,
 			);
 			path = Pokedex;
 			sourceTree = "<group>";
@@ -141,6 +180,8 @@
 				6358DC0C23319C0700457D24 /* Sources */,
 				6358DC0D23319C0700457D24 /* Frameworks */,
 				6358DC0E23319C0700457D24 /* Resources */,
+				6343FF9D2344285A00E9D58D /* ShellScript */,
+				6343FFA223442BA800E9D58D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -236,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6358DC1E23319C0A00457D24 /* LaunchScreen.storyboard in Resources */,
+				6343FFA723442D3100E9D58D /* pokemon.json in Resources */,
 				6358DC1B23319C0A00457D24 /* Assets.xcassets in Resources */,
 				6358DC1923319C0700457D24 /* Main.storyboard in Resources */,
 			);
@@ -257,6 +299,30 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6343FF9D2344285A00E9D58D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyJSON.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6358DC0C23319C0700457D24 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -265,6 +331,7 @@
 				6358DC1623319C0700457D24 /* ViewController.swift in Sources */,
 				6345A52E233D8EF2008E63D8 /* ListaCollectionViewController.swift in Sources */,
 				6345A530233D9071008E63D8 /* PokemonCollectionViewCell.swift in Sources */,
+				6343FFA92344346100E9D58D /* LoginViewController.swift in Sources */,
 				6358DC1423319C0700457D24 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,6 +510,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5N4MAZ49LX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Pokedex/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -464,6 +535,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5N4MAZ49LX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Pokedex/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (

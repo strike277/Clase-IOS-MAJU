@@ -1,1 +1,2 @@
+github "SDWebImage/SDWebImage" "5.2.1"
 github "SwiftyJSON/SwiftyJSON" "4.3.0"
