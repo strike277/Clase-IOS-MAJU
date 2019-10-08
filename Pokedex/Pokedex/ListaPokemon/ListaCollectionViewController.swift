@@ -59,12 +59,12 @@ extension ListaCollectionViewController: UICollectionViewDelegate, UICollectionV
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pokemonCell", for: indexPath) as! PokemonCollectionViewCell
     
         let pokemon = data[indexPath.row]
-        //cell.imagenPokemon.sd_setImage(with: URL(string: pokemon["image"].stringValue), placeholderImage: UIImage(named: "Ditto"), options: .fromLoaderOnly, context: nil)
-        if let url = URL(string: pokemon["image"].stringValue) {
+        cell.imagenPokemon.sd_setImage(with: URL(string: pokemon["image"].stringValue), placeholderImage: UIImage(named: "Ditto"), options: .fromLoaderOnly, context: nil)
+        /*if let url = URL(string: pokemon["image"].stringValue) {
             let data = try! Data(contentsOf: url)
             let image = UIImage(data: data)
             cell.imagenPokemon.image = image
-        }
+        }*/
         
         cell.buttonOne.setTitle(pokemon["name"].stringValue, for: .normal)
         cell.buttonOne.addTarget(self, action: #selector(goDetail), for: .touchUpInside)
